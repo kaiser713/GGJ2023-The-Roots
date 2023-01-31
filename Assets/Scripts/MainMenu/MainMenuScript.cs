@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Animator ani;
+
     void Start()
     {
         
@@ -19,11 +20,19 @@ public class MainMenuScript : MonoBehaviour
 
     public void GameStart()
     {
-        SceneManager.LoadScene(1);
+        Debug.Log("Start");
+        StartCoroutine(FadeIn());
     }
 
     public void GameExit()
     {
         Application.Quit();
+    }
+
+    IEnumerator FadeIn()
+    {
+        ani.SetTrigger("Fade");
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(1);
     }
 }
