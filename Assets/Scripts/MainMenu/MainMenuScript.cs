@@ -45,6 +45,6 @@ public class MainMenuScript : MonoBehaviour
     {
         ani.SetTrigger("Fade");
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }

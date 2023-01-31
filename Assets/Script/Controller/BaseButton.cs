@@ -32,6 +32,11 @@ public class BaseButton : MonoBehaviour
         }
     }
 
+    public void fileClick(GameObject file)
+    {
+        file.gameObject.SetActive(true);
+    }
+
     // Update is called once per frame
     void Update()
     {
