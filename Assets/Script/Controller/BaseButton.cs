@@ -37,6 +37,18 @@ public class BaseButton : MonoBehaviour
         file.gameObject.SetActive(true);
     }
 
+    public void fileEnter(GameObject file)
+    {
+        Debug.Log("Something has enter" + file.gameObject.name + "!");
+        file.gameObject.GetComponent<Animator>().SetBool("isEnter",true);
+    }
+
+    public void fileExit(GameObject file)
+    {
+        Debug.Log("Something has exit" + file.gameObject.name + "!");
+        file.gameObject.GetComponent<Animator>().SetBool("isEnter", false);
+    }
+
     // Update is called once per frame
     void Update()
     {
