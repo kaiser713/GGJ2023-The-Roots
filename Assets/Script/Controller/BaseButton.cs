@@ -6,6 +6,13 @@ using UnityEngine.UI;
 
 public class BaseButton : MonoBehaviour
 {
+    public bool isOpen = false;
+
+    void Start()
+    {
+
+    }
+
     public void ListClick(GameObject prefab)
     {
         Debug.Log("点击事件: 展示子資料夾");
@@ -14,7 +21,14 @@ public class BaseButton : MonoBehaviour
         {
             GameObject child = prefab.transform.GetChild(i).gameObject;
             //Do something with child
-            child.gameObject.SetActive(false);
+            if (child.gameObject.activeSelf)
+            {
+                child.gameObject.SetActive(false);
+            }
+            else
+            {
+                child.gameObject.SetActive(true);
+            }
         }
     }
 
