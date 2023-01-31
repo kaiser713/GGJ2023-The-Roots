@@ -524,6 +524,7 @@ MonoBehaviour:
   - {fileID: 2033103427}
   - {fileID: 26468310}
   - {fileID: 586028098}
+  autoquads: []
 --- !u!1 &1722053676
 GameObject:
   m_ObjectHideFlags: 0
