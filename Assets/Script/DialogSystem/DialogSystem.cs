@@ -18,8 +18,8 @@ public class DialogSystem : MonoBehaviour
     public Sprite headPlayer;
     public Sprite headNPC;
 
-    bool textFinished;  //文本是否显示完毕
-    bool isTyping;  //是否在逐字显示
+    public bool textFinished;  //文本是否显示完毕
+    public bool isTyping;  //是否在逐字显示
 
     List<string> textList = new List<string>();
 
@@ -79,7 +79,7 @@ public class DialogSystem : MonoBehaviour
         //判断文本文件里的内容
         switch (textList[index].Trim())
         {
-            case "A":
+            case "Tom":
                 headImage.sprite = headPlayer;
                 index++;
                 break;
