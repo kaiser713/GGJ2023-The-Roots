@@ -12,7 +12,7 @@ public class DottedLine : MonoBehaviour
  
     private Material _material;
 
-    List<GameObject> autoquads = new List<GameObject>();
+    [SerializeField]List<GameObject> autoquads = new List<GameObject>();
  
     private MaterialPropertyBlock _propertyBlock;
  
@@ -37,15 +37,17 @@ public class DottedLine : MonoBehaviour
     {
  
         if (PointList.Count <= 0) return;
- 
- 
-        foreach (GameObject o in autoquads)
-        {
-            if (o != null) Destroy(o);
-        }
- 
-        autoquads.Clear();
- 
+
+
+        //foreach (GameObject o in autoquads)
+        //{
+        //    if (o != null) Destroy(o);
+        //}
+
+        //autoquads.Clear();
+
+        if (autoquads.Count != 0) return;
+
         for (int i = 1; i < PointList.Count; i++)
         {
             CreatQuadScale(PointList[0].position, PointList[i].position,PointList[i].name);
@@ -60,7 +62,9 @@ public class DottedLine : MonoBehaviour
  
         autoquads.Add(go);
  
-        go.name = "autoQuad_"+name;
+        go.name = "autoQuad_" + name;
+
+        go.transform.parent = GameObject.Find(name).transform;
  
         n++;
  
