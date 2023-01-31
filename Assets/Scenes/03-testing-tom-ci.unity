@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 26468313}
   - component: {fileID: 26468312}
   m_Layer: 0
-  m_Name: "\u516C\u53F8\u7C21\u4ECBtxt"
+  m_Name: "\u516C\u53F8\u7C21\u4ECBtxt_File01"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
