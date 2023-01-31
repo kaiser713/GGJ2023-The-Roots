@@ -7,6 +7,8 @@ public class MainMenuScript : MonoBehaviour
 {
     public Animator ani;
 
+    public GameObject msgBox;
+
     void Start()
     {
         
@@ -22,6 +24,16 @@ public class MainMenuScript : MonoBehaviour
     {
         Debug.Log("Start");
         StartCoroutine(FadeIn());
+    }
+
+    public void GameOptionOpen()
+    {
+        msgBox.SetActive(true);
+    }
+
+    public void GameOptionClose()
+    {
+        msgBox.SetActive(false);
     }
 
     public void GameExit()
