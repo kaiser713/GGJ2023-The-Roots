@@ -404,7 +404,7 @@ Canvas:
   m_GameObject: {fileID: 630163339}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1722053680}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -720,6 +720,22 @@ PrefabInstance:
     - target: {fileID: 515098024252637874, guid: 20d8a749e97057c469cb57538ce78fce, type: 3}
       propertyPath: m_Name
       value: File01
+      objectReference: {fileID: 0}
+    - target: {fileID: 515098024252637874, guid: 20d8a749e97057c469cb57538ce78fce, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791792770940283101, guid: 20d8a749e97057c469cb57538ce78fce, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791792772021844716, guid: 20d8a749e97057c469cb57538ce78fce, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1040
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791792772021844716, guid: 20d8a749e97057c469cb57538ce78fce, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20d8a749e97057c469cb57538ce78fce, type: 3}
