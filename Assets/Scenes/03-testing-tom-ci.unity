@@ -779,7 +779,7 @@ GameObject:
   - component: {fileID: 586028101}
   - component: {fileID: 586028100}
   m_Layer: 0
-  m_Name: "\u5B50\u6587\u4EF6\u593E"
+  m_Name: "\u5B50\u6587\u4EF6\u593E_\u516C\u53F8\u8CC7\u6599"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -876,7 +876,7 @@ MonoBehaviour:
           m_MethodName: fileEnter
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 586028097}
+            m_ObjectArgument: {fileID: 2019899455}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -892,7 +892,7 @@ MonoBehaviour:
           m_MethodName: fileExit
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 586028097}
+            m_ObjectArgument: {fileID: 2019899455}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -902,7 +902,19 @@ MonoBehaviour:
   - eventID: 4
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 30691673}
+          m_TargetAssemblyTypeName: BaseButton, Assembly-CSharp
+          m_MethodName: ListClick
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 586028097}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!61 &586028101
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2770,7 +2782,7 @@ GameObject:
   - component: {fileID: 2033103429}
   - component: {fileID: 2033103430}
   m_Layer: 0
-  m_Name: "\u7167\u7247png"
+  m_Name: "\u5718\u968A\u5408\u7167png"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
