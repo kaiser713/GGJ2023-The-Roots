@@ -87,6 +87,13 @@ public class DialogSystem : MonoBehaviour
                 headImage.sprite = headNPC;
                 index++;
                 break;
+            case "Endl":
+                headImage.gameObject.SetActive(false);
+                textLabel.gameObject.SetActive(false);
+                isTyping = false;
+                textFinished = false;
+                index = 0;
+                break;
         }
 
         //每按一次F键播放一行文字
