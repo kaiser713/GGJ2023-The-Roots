@@ -15,11 +15,12 @@ public class DialogSystem : MonoBehaviour
     public float textSpeed;
 
     [Header("头像")]
-    public Sprite headPlayer;
-    public Sprite headNPC;
+    public Sprite headTom;
+    public Sprite headKen;
 
     public bool textFinished;  //文本是否显示完毕
     public bool isTyping;  //是否在逐字显示
+    public bool isDialogEnd; //是否聊天結束
 
     List<string> textList = new List<string>();
 
@@ -32,7 +33,17 @@ public class DialogSystem : MonoBehaviour
     {
         index = 0;  //对话框每次隐藏变为显示就重置对话
         textFinished = true;    //对话框每次隐藏变为显示状态变为文本已结束
+        isDialogEnd = false;
         StartCoroutine(setTextUI());
+    }
+
+    void OnDisable()
+    {
+        index = 0;  //对话框每次隐藏变为显示就重置对话
+        textFinished = true;    //对话框每次隐藏变为显示状态变为文本已结束
+        headImage.gameObject.SetActive(false);
+        textLabel.gameObject.SetActive(false);
+        isDialogEnd = true;
     }
 
     void Update()
@@ -40,13 +51,17 @@ public class DialogSystem : MonoBehaviour
         //如果按下F键并且对话全部结束后关闭对话框
         if (Input.GetKeyDown(KeyCode.F) && index == textList.Count)
         {
-            gameObject.SetActive(false);
+            OnDisable();
             return;
         }
 
         //按下F键，当前行文本完成就执行协程，当前行文本未完成就直接显示当前行文本
         if (Input.GetKeyDown(KeyCode.F))
         {
+            if (isDialogEnd)
+            {
+                return;
+            }
             if (textFinished)
             {
                 StartCoroutine(setTextUI());
@@ -58,7 +73,7 @@ public class DialogSystem : MonoBehaviour
         }
     }
 
-    void GetTextFromFile(TextAsset file)
+    public void GetTextFromFile(TextAsset file)
     {
         //清空文本内容
         textList.Clear();
@@ -69,6 +84,10 @@ public class DialogSystem : MonoBehaviour
         {
             textList.Add(line);
         }
+        Debug.Log("GetTextFromFile: file Name: " + file.text + " loaded");
+
+        // 重啟文本
+        OnEnable();
     }
 
     IEnumerator setTextUI()
@@ -80,19 +99,12 @@ public class DialogSystem : MonoBehaviour
         switch (textList[index].Trim())
         {
             case "Tom":
-                headImage.sprite = headPlayer;
+                headImage.sprite = headTom;
                 index++;
                 break;
-            case "B":
-                headImage.sprite = headNPC;
+            case "Ken":
+                headImage.sprite = headKen;
                 index++;
-                break;
-            case "Endl":
-                headImage.gameObject.SetActive(false);
-                textLabel.gameObject.SetActive(false);
-                isTyping = false;
-                textFinished = false;
-                index = 0;
                 break;
         }
 
