@@ -69,13 +69,13 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Ratio: 0.5
+    - _Ratio: 0.705
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _Speed: 3
     - _SrcBlend: 1
     - _UVSec: 0
-    - _Width: 0.01
+    - _Width: 0.18
     - _Y: 0
     - _ZWrite: 1
     m_Colors:

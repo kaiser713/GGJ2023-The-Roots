@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/02-GameScene.unity
     guid: 07e552ca2606f3a47b26720457462ad8
+  - enabled: 1
+    path: Assets/Scenes/03-testing-tom-ci.unity
+    guid: 2b030f39673b36d44b2455d8b51b507e
   m_configObjects: {}

@@ -21,7 +21,7 @@ public class BaseButton : MonoBehaviour
         {
             GameObject child = prefab.transform.GetChild(i).gameObject;
             //Do something with child
-            if (child.gameObject.activeSelf)
+            if (child.gameObject.activeSelf && !child.CompareTag("Logo"))
             {
                 child.gameObject.SetActive(false);
             }
@@ -30,6 +30,25 @@ public class BaseButton : MonoBehaviour
                 child.gameObject.SetActive(true);
             }
         }
+    }
+
+    public void fileClick(GameObject file)
+    {
+        file.gameObject.SetActive(true);
+    }
+
+    public void fileEnter(GameObject file)
+    {
+        //Debug.Log("Something has enter" + file.gameObject.name + "!");
+        //file.gameObject.GetComponent<Animator>().SetBool("isEnter",true);
+        file.gameObject.transform.localScale = new Vector3(1.15f, 1.15f, 1.15f);
+    }
+
+    public void fileExit(GameObject file)
+    {
+        //Debug.Log("Something has exit" + file.gameObject.name + "!");
+        //file.gameObject.GetComponent<Animator>().SetBool("isEnter", false);
+        file.gameObject.transform.localScale = new Vector3(1, 1, 1);
     }
 
     // Update is called once per frame
