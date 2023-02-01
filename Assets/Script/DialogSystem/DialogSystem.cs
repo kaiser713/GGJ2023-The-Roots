@@ -23,9 +23,14 @@ public class DialogSystem : MonoBehaviour
 
     List<string> textList = new List<string>();
 
+    [Header("音效")]
+    static AudioSource audioSrc;
+    public AudioClip typingWriterSound;
+
     void Awake()
     {
         GetTextFromFile(textFile);
+        audioSrc = GetComponent<AudioSource>();
     }
 
     void OnEnable()
@@ -95,6 +100,12 @@ public class DialogSystem : MonoBehaviour
         {
             //逐字显示
             textLabel.text += textList[index][word];
+            //play audio when the text is showing
+            if (audioSrc.isPlaying)
+                audioSrc.Stop();
+            audioSrc.clip = typingWriterSound;
+            audioSrc.Play();
+
             word++;
             yield return new WaitForSeconds(textSpeed);
         }
