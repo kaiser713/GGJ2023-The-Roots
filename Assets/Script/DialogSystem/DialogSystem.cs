@@ -16,7 +16,7 @@ public class DialogSystem : MonoBehaviour
 
     [Header("头像")]
     public Sprite headTom;
-    public Sprite headKen;
+    public Sprite headBoss;
 
     public bool textFinished;  //文本是否显示完毕
     public bool isTyping;  //是否在逐字显示
@@ -107,9 +107,13 @@ public class DialogSystem : MonoBehaviour
                 headImage.sprite = headTom;
                 index++;
                 break;
-            case "Ken":
-                headImage.sprite = headKen;
+            case "Boss":
+                headImage.sprite = headBoss;
                 index++;
+                break;
+            case "End1":
+                break;
+            case "End2":
                 break;
         }
 

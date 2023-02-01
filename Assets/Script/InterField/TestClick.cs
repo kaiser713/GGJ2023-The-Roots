@@ -25,13 +25,13 @@ public class TestClick : MonoBehaviour
     {
         switch (str)
         {
-            case "69":
+            case ".Roots/Submit Folder/Classified":
                 End1();
                 break;
-            case "Tom":
+            case ".Roots/Submit Folder/Photo":
                 End2();
                 break;
-            case "111":
+            case ".Roots/":
                 End3();
                 break;
             default :
