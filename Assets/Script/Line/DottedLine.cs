@@ -64,7 +64,7 @@ public class DottedLine : MonoBehaviour
  
         go.name = "autoQuad_" + name;
 
-        go.transform.parent = GameObject.Find(name).transform;
+        //go.transform.parent = GameObject.Find(name).transform;
  
         n++;
  
