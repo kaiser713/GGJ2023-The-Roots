@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class TestClick : MonoBehaviour
 {
+    public GameObject dialog;
+
     private void End1()
     {
-        Debug.Log("Hello World!");
+        Debug.Log("Entering Ending 1");
+        TextAsset ending = Resources.Load<TextAsset>("End1") as TextAsset;
+        dialog.GetComponent<DialogSystem>().GetTextFromFile(ending);
     }
     private void End2()
     {
-        Debug.Log("Hello Tom");
+        Debug.Log("Entering Ending 2");
+        TextAsset ending = Resources.Load<TextAsset>("End2") as TextAsset;
+        dialog.GetComponent<DialogSystem>().GetTextFromFile(ending);
     }
     private void End3()
     {
-        Debug.Log("PPP");
+        Debug.Log("Entering Ending 3");
+        TextAsset ending = Resources.Load<TextAsset>("End3") as TextAsset;
+        dialog.GetComponent<DialogSystem>().GetTextFromFile(ending);
     }
     private void TestingEnding(string str)
     {
@@ -25,14 +33,17 @@ public class TestClick : MonoBehaviour
     {
         switch (str)
         {
-            case ".Roots/Submit Folder/Classified":
+            case ".Root/data/Submit folder/Classified":
                 End1();
                 break;
-            case ".Roots/Submit Folder/Photo":
+            case ".Root/data/Photo/meme1.png":
                 End2();
                 break;
-            case ".Roots/":
-                End3();
+            case ".Root/data/Photo/meme2.png":
+                End2();
+                break;
+            case ".Root/data/Photo/meme3.png":
+                End2();
                 break;
             default :
                 TestingEnding(str);

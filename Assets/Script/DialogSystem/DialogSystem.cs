@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogSystem : MonoBehaviour
 {
+    public GameObject ending1;
+    public GameObject ending2;
     [Header("UI组件")]
     public Image headImage;
     public Text textLabel;
@@ -82,6 +85,7 @@ public class DialogSystem : MonoBehaviour
     {
         //清空文本内容
         textList.Clear();
+        Debug.Log("GetTextFromFile: file Name: " + file.text + " loaded");
 
         //切割文本文件内容然后一行一行加到list集合中
         var lineDate = file.text.Split('\n');
@@ -89,10 +93,32 @@ public class DialogSystem : MonoBehaviour
         {
             textList.Add(line);
         }
-        Debug.Log("GetTextFromFile: file Name: " + file.text + " loaded");
 
         // 重啟文本
         OnEnable();
+    }
+
+    IEnumerator FadeIn1()
+    {
+        ending1.SetActive(true);
+        yield return new WaitForSeconds(3.5f);
+        SceneManager.LoadScene(0);
+    }
+    
+    IEnumerator FadeIn2()
+    {
+        ending2.SetActive(true);
+        yield return new WaitForSeconds(3.5f);
+        SceneManager.LoadScene(0);
+    } 
+
+    void End1()
+    {
+        StartCoroutine(FadeIn1());
+    }
+    void End2()
+    {
+        StartCoroutine(FadeIn2());
     }
 
     IEnumerator setTextUI()
@@ -112,8 +138,12 @@ public class DialogSystem : MonoBehaviour
                 index++;
                 break;
             case "End1":
+                Debug.Log("Ending 1 animation");
+                End1();
                 break;
             case "End2":
+                Debug.Log("Ending 2 animation");
+                End2();
                 break;
         }
 
